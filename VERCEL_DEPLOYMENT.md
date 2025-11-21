@@ -10,7 +10,7 @@ This guide explains how to deploy the Vehicle Number Plate Detection system to V
 
 **Why this split?**
 Vercel is optimized for frontend applications and serverless functions. The backend uses heavy ML models (YOLOv8, EasyOCR) that require:
-- Large model files (~300MB+)
+- Large model files (YOLOv8 ~6MB, EasyOCR ~290MB total, combined ~300MB+)
 - Python dependencies with system libraries (OpenCV, PyTorch)
 - Longer processing times than Vercel's serverless timeout allows
 

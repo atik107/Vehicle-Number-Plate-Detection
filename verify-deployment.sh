@@ -92,7 +92,7 @@ fi
 # Check .env.production
 if [ -f ".env.production" ]; then
     echo -e "${GREEN}✅ .env.production exists${NC}"
-    if grep -q "your-backend-url" .env.production; then
+    if grep -q "YOUR_ACTUAL_BACKEND_URL_HERE" .env.production; then
         echo -e "${YELLOW}⚠️  Warning: .env.production still has placeholder URL${NC}"
         echo -e "${YELLOW}   Update REACT_APP_API_URL after deploying backend${NC}"
     fi
