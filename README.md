@@ -357,6 +357,27 @@ Response:
 }
 ```
 
+## Deployment
+
+### Deploy to Vercel (Frontend) + Render (Backend)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fatik107%2FVehicle-Number-Plate-Detection&project-name=vehicle-detection&repository-name=vehicle-detection&root-directory=frontend)
+
+**Quick Deploy:**
+1. **Backend**: Deploy to [Render](https://render.com) (Free tier available)
+2. **Frontend**: Click the "Deploy to Vercel" button above
+
+**Documentation:**
+- 📘 [Vercel Deployment Guide](VERCEL_DEPLOYMENT.md) - Complete step-by-step guide
+- 📗 [Quick Deploy Guide](DEPLOY_TO_VERCEL.md) - Quick reference
+- 📙 [General Deployment](DEPLOYMENT.md) - All deployment options
+
+**Architecture:**
+```
+Frontend (Vercel) → Backend (Render)
+   React App    →   FastAPI + ML Models
+```
+
 ## Future Enhancements
 
 - [ ] Support for multiple number plate formats (US, EU, Asia, etc.)
