@@ -16,10 +16,19 @@ import base64
 
 app = FastAPI(title="Vehicle & Number Plate Detection API", version="1.0.0")
 
-# CORS middleware
+# CORS middleware - Allow frontend from different origins
+allowed_origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://atik107.github.io",
+    "https://*.vercel.app",
+    "https://*.netlify.app",
+    # Add your deployed frontend URL here
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # In production, replace with allowed_origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

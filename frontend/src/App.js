@@ -5,6 +5,9 @@ import { FiUpload, FiImage, FiDownload, FiTrash2, FiCheckCircle, FiAlertCircle }
 import { AiOutlineCar } from 'react-icons/ai';
 import './App.css';
 
+// API URL from environment variable or fallback to localhost
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -43,7 +46,7 @@ function App() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await axios.post('http://localhost:8000/detect', formData, {
+      const response = await axios.post(`${API_URL}/detect`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -72,7 +75,7 @@ function App() {
   const downloadResult = () => {
     if (results && results.output_url) {
       const link = document.createElement('a');
-      link.href = `http://localhost:8000${results.output_url}`;
+      link.href = `${API_URL}${results.output_url}`;
       link.download = results.output_image;
       link.click();
     }
@@ -194,7 +197,7 @@ function App() {
                 {/* Result Image */}
                 <div className="bg-white bg-opacity-10 rounded-xl p-4">
                   <img
-                    src={`http://localhost:8000${results.output_url}`}
+                    src={`${API_URL}${results.output_url}`}
                     alt="Detection Result"
                     className="w-full rounded-lg shadow-lg"
                   />
