@@ -1,0 +1,56 @@
+# Backend files (not needed for frontend deployment)
+backend/
+backend/**
+
+# Python files
+*.pyc
+__pycache__/
+*.py
+*.pyo
+*.pyd
+.Python
+requirements.txt
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation (not needed for deployment)
+*.md
+!frontend/README.md
+
+# Scripts
+*.ps1
+*.sh
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Render config
+render.yaml
+
+# Test files
+*.test.js
+*.spec.js
+**/__tests__/
+
+# Misc
+.github/
